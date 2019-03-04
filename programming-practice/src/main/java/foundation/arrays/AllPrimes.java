@@ -1,9 +1,9 @@
 package foundation.arrays;
 
-import common.Utils;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import static common.Utils.convertIntegers;
 
 /**
  * Prints all prime number in range (2...N)
@@ -46,9 +46,8 @@ public class AllPrimes {
                 primeList.add(i);
             }
         }
-        return Utils.convertIntegers(primeList);
+        return convertIntegers(primeList);
     }
-
 
     /**
      * Print all prime numbers.
@@ -66,6 +65,6 @@ public class AllPrimes {
                 primeNumbers.add(i);
             }
         }
-        return Utils.convertIntegers(primeNumbers);
+        return convertIntegers(primeNumbers);
     }
 }

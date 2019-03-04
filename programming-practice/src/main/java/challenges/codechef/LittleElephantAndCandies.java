@@ -1,5 +1,7 @@
 package challenges.codechef;
 
+import java.util.Scanner;
+
 /**
  * Problem Statement:-
  * <p>
@@ -59,4 +61,26 @@ package challenges.codechef;
  */
 public class LittleElephantAndCandies {
 
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            int noOfTestCases = scanner.nextInt();
+            for (int testCtr = 0; testCtr < noOfTestCases; testCtr++) {
+                int numElephants = scanner.nextInt();
+                int candiesAvailable = scanner.nextInt();
+
+                int candiesRequired = 0;
+                for (int elephantCtr = 0; elephantCtr < numElephants; elephantCtr++) {
+                    candiesRequired += scanner.nextInt();
+                }
+
+                if (candiesAvailable < candiesRequired) {
+                    System.out.println("No");
+                } else {
+                    System.out.println("Yes");
+                }
+            }
+        }
+    }
 }

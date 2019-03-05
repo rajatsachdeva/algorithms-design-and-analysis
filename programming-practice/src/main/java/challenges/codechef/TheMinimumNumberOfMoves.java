@@ -57,7 +57,7 @@ import java.util.Arrays;
  * https://leetcode.com/problems/minimum-moves-to-equal-array-elements/discuss/93886/thinking-process-of-solving-problems-use-java-37ms
  * This is a DP problem. It should be revisited once done, use naive approach
  * <p>
- * TODO: Understand this problem in more detail
+ * TODO: Understand this problem in more detail when you study DP.
  */
 public class TheMinimumNumberOfMoves {
 

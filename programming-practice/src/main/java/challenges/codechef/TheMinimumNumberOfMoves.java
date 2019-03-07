@@ -140,7 +140,6 @@ public class TheMinimumNumberOfMoves {
                 }
                 System.out.println(minMovesUsingDP1(salaries));
             }
-        } catch (Exception e) {
-        }
+        } catch (Exception e) { }
     }
 }

@@ -1,9 +1,9 @@
 package foundation.arrays;
 
+import utilities.ConversionHelper;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import static common.Utils.convertIntegers;
 
 /**
  * Prints all prime number in range (2...N)
@@ -12,6 +12,7 @@ import static common.Utils.convertIntegers;
  */
 public class AllPrimes {
 
+    private final static ConversionHelper CONVERSION_HELPER = ConversionHelper.INSTANCE;
 
     /**
      * Using Sieve Of Eratosthenes
@@ -46,7 +47,7 @@ public class AllPrimes {
                 primeList.add(i);
             }
         }
-        return convertIntegers(primeList);
+        return CONVERSION_HELPER.fromIntegerListToIntegerArray(primeList);
     }
 
     /**
@@ -65,6 +66,6 @@ public class AllPrimes {
                 primeNumbers.add(i);
             }
         }
-        return convertIntegers(primeNumbers);
+        return CONVERSION_HELPER.fromIntegerListToIntegerArray(primeNumbers);
     }
 }

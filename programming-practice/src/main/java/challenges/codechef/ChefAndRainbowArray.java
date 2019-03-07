@@ -1,7 +1,7 @@
 package challenges.codechef;
 
 
-import utilities.InputScanner;
+import utilities.InputReaderHelper;
 
 import static java.lang.System.out;
 
@@ -90,7 +90,7 @@ public class ChefAndRainbowArray {
     }
 
     public static void main(String[] args) {
-        InputScanner in = new InputScanner(System.in);
+        InputReaderHelper in = new InputReaderHelper(System.in);
         // Test data preparation
         int T = in.readInt();
         while (T-- > 0) {

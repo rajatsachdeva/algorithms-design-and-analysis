@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.InputMismatchException;
 
-public class InputScanner {
+public class InputReaderHelper {
 
     private InputStream inputStream;
     private final byte buf[] = new byte[1024];
@@ -15,25 +15,27 @@ public class InputScanner {
     private int numChars;
     private SpaceCharFilter filter;
 
-    public InputScanner(InputStream inputStream) {
+    public InputReaderHelper(InputStream inputStream) {
         this.inputStream = inputStream;
 
     }
 
-    public InputScanner(String fileName) throws FileNotFoundException {
+    public InputReaderHelper(String fileName) throws FileNotFoundException {
         inputStream = new DataInputStream(new FileInputStream(fileName));
     }
 
     public int read() {
-        if (numChars == -1) throw new InputMismatchException();
+        if (numChars == -1)
+            throw new RuntimeException();
         if (curChar >= numChars) {
             curChar = 0;
             try {
                 numChars = inputStream.read(buf);
             } catch (IOException e) {
-                throw new InputMismatchException();
+                throw new RuntimeException();
             }
-            if (numChars <= 0) return -1;
+            if (numChars <= 0)
+                return -1;
         }
         return buf[curChar++];
     }
@@ -60,6 +62,14 @@ public class InputScanner {
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = readInt();
+        }
+        return arr;
+    }
+
+    public String[] readStringArray(int n) {
+        String[] arr = new String[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = readString();
         }
         return arr;
     }

@@ -7,14 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-/**
- * A simple test runner to execute multiple similar test cases, starting with '_'. Example :
- * <p>
- * _methodWithImplementation
- * _methodWithAnotherImplementation
- *
- * @author Hxkandwal
- */
+
 public class HandyTestRunner {
 
     private static int testCount = 1;

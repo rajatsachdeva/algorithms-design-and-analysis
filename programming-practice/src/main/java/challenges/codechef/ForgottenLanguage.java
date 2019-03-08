@@ -8,7 +8,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Problem Statement
+ * Problem Statement:-
+ * <p>
  * Forgotten languages (also known as extinct languages) are languages that are no longer in use. Such languages were,
  * probably, widely used before and no one could have ever imagined that they will become extinct at some point.
  * Unfortunately, that is what happened to them. On the happy side of things, a language may be dead, but some of
@@ -62,7 +63,7 @@ import java.util.Set;
  * TIPS: Good news
  * - We can use collections
  */
-public class Forgottenlanguage {
+public class ForgottenLanguage {
 
     public static void main(String[] args) {
         InputReaderHelper in = null;

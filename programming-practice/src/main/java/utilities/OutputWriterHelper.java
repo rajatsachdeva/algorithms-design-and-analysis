@@ -6,15 +6,15 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Writer;
 
-public class OutputReaderHelper {
+public class OutputWriterHelper {
 
     private final PrintWriter writer;
 
-    public OutputReaderHelper(OutputStream stream) {
+    public OutputWriterHelper(OutputStream stream) {
         this.writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(stream)));
     }
 
-    public OutputReaderHelper(Writer writer) {
+    public OutputWriterHelper(Writer writer) {
         this.writer = new PrintWriter(writer);
     }
 

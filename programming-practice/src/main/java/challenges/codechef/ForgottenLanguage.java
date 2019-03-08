@@ -1,7 +1,7 @@
 package challenges.codechef;
 
 import utilities.InputReaderHelper;
-import utilities.OutputReaderHelper;
+import utilities.OutputWriterHelper;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -67,10 +67,10 @@ public class ForgottenLanguage {
 
     public static void main(String[] args) {
         InputReaderHelper in = null;
-        OutputReaderHelper out = null;
+        OutputWriterHelper out = null;
         try {
             in = new InputReaderHelper(System.in);
-            out = new OutputReaderHelper(System.out);
+            out = new OutputWriterHelper(System.out);
             int numTestCases = in.readInt();
             while (numTestCases-- > 0) {
                 int numForgottenWords = in.readInt();

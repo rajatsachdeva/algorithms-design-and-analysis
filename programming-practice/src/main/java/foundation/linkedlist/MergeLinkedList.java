@@ -1,4 +1,4 @@
-package challenges.assorted;
+package foundation.linkedlist;
 
 public class MergeLinkedList {
 }

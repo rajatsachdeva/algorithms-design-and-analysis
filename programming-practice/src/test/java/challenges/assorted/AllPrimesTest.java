@@ -1,10 +1,10 @@
-package foundation.arrays;
+package challenges.assorted;
 
 import org.junit.Test;
 
-import static foundation.arrays.AllPrimes.getPrimeNumbersFast;
-import static foundation.arrays.AllPrimes.getPrimeNumbersSlow;
-import static org.junit.Assert.assertArrayEquals;
+import static challenges.assorted.AllPrimes.getPrimeNumbersFast;
+import static challenges.assorted.AllPrimes.getPrimeNumbersSlow;
+import static org.junit.Assert.*;
 
 public class AllPrimesTest {
 

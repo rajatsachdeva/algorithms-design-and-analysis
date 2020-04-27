@@ -1,4 +1,4 @@
-package foundation.arrays;
+package com.rohan.dsa.foundations.others;
 
 
 /**

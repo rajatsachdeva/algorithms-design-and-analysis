@@ -1,4 +1,4 @@
-package foundation.arrays;
+package com.rohan.dsa.foundations.array;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -74,5 +74,4 @@ public class ResizableArrayTest {
     public void test_onGetVal_throwsExceptionWhenInvalid_whenInvalidIndexPassed() {
         resizableArray.getVal(-2);
     }
-
 }

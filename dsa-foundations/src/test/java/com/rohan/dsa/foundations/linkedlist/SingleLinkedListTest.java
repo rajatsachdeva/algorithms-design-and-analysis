@@ -1,10 +1,8 @@
-package foundation.linkedlist;
+package com.rohan.dsa.foundations.linkedlist;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class SingleLinkedListTest {
 
@@ -100,5 +98,4 @@ public class SingleLinkedListTest {
 
         assertEquals(2, (int) list.nthValueFromEnd(2));
     }
-
 }

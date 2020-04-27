@@ -1,4 +1,4 @@
-package foundation.arrays;
+package challenges.assorted;
 
 /**
  * Create Pascal Triangle. Helps to understand the use of 2-D arrays.

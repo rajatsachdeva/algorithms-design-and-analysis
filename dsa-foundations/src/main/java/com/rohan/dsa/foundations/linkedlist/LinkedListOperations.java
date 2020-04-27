@@ -1,4 +1,4 @@
-package foundation.linkedlist;
+package com.rohan.dsa.foundations.linkedlist;
 
 public interface LinkedListOperations<T> {
 

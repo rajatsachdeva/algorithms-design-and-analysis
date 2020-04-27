@@ -1,4 +1,4 @@
-package foundation.arrays;
+package challenges.assorted;
 
 import utilities.ConversionHelper;
 

@@ -1,14 +1,12 @@
-package foundation.arrays;
+package com.rohan.dsa.foundations.others;
 
 import org.junit.Test;
 
-import static foundation.arrays.CheckPrime.isPrimeUsingForLoop;
-import static foundation.arrays.CheckPrime.isPrimeUsingWhileLoop;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static com.rohan.dsa.foundations.others.CheckPrime.isPrimeUsingForLoop;
+import static com.rohan.dsa.foundations.others.CheckPrime.isPrimeUsingWhileLoop;
+import static org.junit.Assert.*;
 
 public class CheckPrimeTest {
-
     @Test
     public void testCheckPrimeUsingForLoop() {
         assertTrue(isPrimeUsingForLoop(1));

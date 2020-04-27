@@ -1,6 +1,4 @@
-package foundation;
-
-import utilities.HandyTestRunner;
+package utilities;
 
 import java.util.List;
 

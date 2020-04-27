@@ -1,6 +1,5 @@
-package foundation.linkedlist;
+package com.rohan.dsa.foundations.linkedlist;
 
-import utilities.SListNode;
 
 import java.util.NoSuchElementException;
 

@@ -5,7 +5,6 @@ package com.rohan.dsa.foundations.array;
  */
 public class DynamicArray {
 
-
     private int[] arr;
     private int capacity;
     private int nElems;
@@ -20,12 +19,12 @@ public class DynamicArray {
         if (nElems == capacity) {
             expand();
         }
-        arr[nElems] = element;
-        nElems++;
+        arr[nElems++] = element;
     }
 
     private void expand() {
-        int[] temp = new int[capacity * 2];
+        int newSize = capacity * 2;
+        int[] temp = new int[newSize];
         for (int i = 0; i < nElems; i++) {
             temp[i] = arr[i];
         }
@@ -33,16 +32,46 @@ public class DynamicArray {
         arr = temp;
     }
 
-    
-    public boolean delete (int index) {
+    public int delete(int index) {
+        if (index < 0 || index > capacity) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
 
+        if (nElems == 0) {
+            throw new NegativeArraySizeException();
+        }
 
-        return false;
+        int element = remove(index);
+        if (nElems < (capacity / 2)) {
+            shrink();
+        }
+        nElems--;
+
+        return element;
+    }
+
+    private int remove(int index) {
+        int element = arr[index];
+        for (int i = index; i < nElems; i++) {
+            arr[i] = arr[i + 1];
+        }
+        return element;
     }
 
     private void shrink() {
+        int newSize = capacity / 2;
+        int[] temp = new int[newSize];
+        for (int i = 0; i < nElems; i++) {
+            temp[i] = arr[i];
+        }
+        arr = null;
+        arr = temp;
     }
 
     public void display() {
+        for (int i = 0; i < nElems; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("");
     }
 }

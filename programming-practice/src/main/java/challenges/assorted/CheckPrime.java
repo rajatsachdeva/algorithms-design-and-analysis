@@ -1,4 +1,4 @@
-package com.rohan.dsa.foundations.others;
+package challenges.assorted;
 
 
 /**

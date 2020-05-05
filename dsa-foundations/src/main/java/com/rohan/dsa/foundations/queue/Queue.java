@@ -19,7 +19,7 @@ import java.util.stream.IntStream;
  * <p>
  * Underflow and Overflow conditions
  * FIFO
- *
+ * <p>
  * Revisit
  */
 public class Queue {
@@ -27,11 +27,13 @@ public class Queue {
     private int[] arr;
     private int front;
     private int rear;
+    private int size;
 
     public Queue(int size) {
         arr = new int[size];
         front = -1;
         rear = -1;
+        size = 0;
     }
 
     public void enqueue(int data) {
@@ -39,11 +41,13 @@ public class Queue {
             throw new RuntimeException("Queue is Full!");
         }
 
-        if (isEmpty()) {
+        // New item available to pick
+        if (front == -1) {
             front = 0;
         }
 
         rear++;
+        size++;
         arr[rear] = data;
     }
 
@@ -52,14 +56,15 @@ public class Queue {
         if (isEmpty()) {
             throw new RuntimeException("Queue is Empty!");
         }
+
         int data = arr[front];
         front++;
-
-        // To reset it to empty state
+        // Reset to initial state
         if (front > rear) {
             front = -1;
             rear = -1;
         }
+        size--;
         return data;
     }
 
@@ -71,11 +76,11 @@ public class Queue {
     }
 
     public boolean isFull() {
-        return rear == arr.length - 1;
+        return size == arr.length;
     }
 
     public boolean isEmpty() {
-        return front == -1;
+        return size == 0;
     }
 
     @Override

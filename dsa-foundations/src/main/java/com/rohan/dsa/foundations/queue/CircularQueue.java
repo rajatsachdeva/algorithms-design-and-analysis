@@ -3,6 +3,12 @@ package com.rohan.dsa.foundations.queue;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
+/**
+ * Review:
+ *
+ *
+ *
+ */
 public class CircularQueue {
 
     private int[] arr;
@@ -107,9 +113,9 @@ public class CircularQueue {
      */
     private boolean isFullWithoutUsingSize() {
 
-        if (rear + 1 == front) {
+        if (rear + 1 == front) { // 1
             return true;
-        } else if (front == 0 && rear + 1 == capacity) {
+        } else if (front == 0 && rear + 1 == capacity) { //
             return true;
         } else {
             return false;

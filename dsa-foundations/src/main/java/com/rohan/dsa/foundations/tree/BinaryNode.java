@@ -1,4 +1,4 @@
-package com.rohan.dsa.foundations.tree.node;
+package com.rohan.dsa.foundations.tree;
 
 public class BinaryNode {
 

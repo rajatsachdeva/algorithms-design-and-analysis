@@ -1,6 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.node.BinaryNode;
+import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.Queue;
 
 public class BinaryTree {
     private BinaryNode root;

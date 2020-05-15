@@ -1,6 +1,6 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
 import com.rohan.dsa.foundations.tree.Stack;
 
@@ -23,14 +23,14 @@ import com.rohan.dsa.foundations.tree.Stack;
  */
 public class LevelOrderReverseTraversal {
 
-    public void reverseLevelOrder(final BinaryNode root) {
+    public void reverseLevelOrder(final TreeNode root) {
         if (root == null) return;
 
-        Stack<BinaryNode> stack = new Stack<>();
-        Queue<BinaryNode> queue = new Queue<>();
+        Stack<TreeNode> stack = new Stack<>();
+        Queue<TreeNode> queue = new Queue<>();
         queue.enqueue(root);
 
-        BinaryNode current;
+        TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.dequeue();
             if (current.getLeft() != null) {

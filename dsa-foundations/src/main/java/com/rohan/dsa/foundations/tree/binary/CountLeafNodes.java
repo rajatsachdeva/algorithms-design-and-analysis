@@ -1,6 +1,6 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
 
 /**
@@ -10,7 +10,7 @@ import com.rohan.dsa.foundations.tree.Queue;
  */
 public class CountLeafNodes {
 
-    public int countLeafNodes(BinaryNode root) {
+    public int countLeafNodes(TreeNode root) {
 
         if (root == null) {
             return 0;
@@ -20,13 +20,13 @@ public class CountLeafNodes {
                 + countLeafNodes(root.getRight());
     }
 
-    public int countLeafNodesIterative(BinaryNode root) {
+    public int countLeafNodesIterative(TreeNode root) {
         if (root == null) return 0;
 
-        Queue<BinaryNode> queue = new Queue<>();
+        Queue<TreeNode> queue = new Queue<>();
         queue.enqueue(root);
         int count = 0;
-        BinaryNode current;
+        TreeNode current;
         while (!queue.isEmpty()) {
 
             current = queue.dequeue();
@@ -46,7 +46,7 @@ public class CountLeafNodes {
         return count;
     }
 
-    private boolean isLeafNode(BinaryNode node) {
+    private boolean isLeafNode(TreeNode node) {
         return node.getLeft() == null && node.getRight() == null;
     }
 }

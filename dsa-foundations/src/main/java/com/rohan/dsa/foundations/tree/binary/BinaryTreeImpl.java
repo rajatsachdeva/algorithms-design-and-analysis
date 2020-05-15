@@ -3,7 +3,7 @@ package com.rohan.dsa.foundations.tree.binary;
 import com.rohan.dsa.foundations.tree.BinaryNode;
 import com.rohan.dsa.foundations.tree.Queue;
 
-public class BinaryTree {
+public class BinaryTreeImpl {
     private BinaryNode root;
 
     public void insert(int data) {
@@ -112,14 +112,5 @@ public class BinaryTree {
 
     public BinaryNode getRoot() {
         return root;
-    }
-
-    public static void main(String[] args) {
-        //Create a blank Tree
-        BinaryTree tree = new BinaryTree();
-        //Insert 10 nodes in the tree
-        System.out.println("Inserting 10 nodes to tree");
-        for (int i = 1; i <= 10; i++)
-            tree.insert(i * 10);
     }
 }

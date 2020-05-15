@@ -1,11 +1,11 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
 
 public class SearchInBinaryTree {
 
-    public boolean search(BinaryNode root, int data) {
+    public boolean search(TreeNode root, int data) {
         if (root == null) {
             return false;
         }
@@ -16,14 +16,14 @@ public class SearchInBinaryTree {
         return search(root.getLeft(), data) || search(root.getRight(), data);
     }
 
-    public boolean searchIterative(BinaryNode root, int data) {
+    public boolean searchIterative(TreeNode root, int data) {
         if (root == null) {
             return false;
         }
-        Queue<BinaryNode> queue = new Queue<>();
+        Queue<TreeNode> queue = new Queue<>();
         queue.enqueue(root);
         while (!queue.isEmpty()) {
-            BinaryNode first = queue.dequeue();
+            TreeNode first = queue.dequeue();
             if (first.getValue() == data) {
                 return true;
             }

@@ -27,6 +27,8 @@ public interface BinaryTree {
 
     boolean isBlank();
 
+    boolean isMirror();
+
     int deepest();
 
     int leavesCount();
@@ -37,13 +39,15 @@ public interface BinaryTree {
 
     int sum();
 
-    int lowestCommonAncestor();
+    int lowestCommonAncestorOf(int data);
 
-    BinaryTree fromInOrderAndPostOrder();
+    BinaryTree fromInOrderAndPostOrder(int[] inOrder, int[] postOrder);
 
-    BinaryTree fromInOrderAndPreOrder();
+    BinaryTree fromInOrderAndPreOrder(int[] inOrder, int[] preOrder);
 
-    BinaryTree fromPostOrderAndInOrder();
+    BinaryTree fromPostOrderAndInOrder(int[] preOrder, int[] postOrder);
+
+    BinaryTree mirror();
 
     String preOrder();
 
@@ -62,4 +66,6 @@ public interface BinaryTree {
     String reverseLevelOrder();
 
     void printByLevel();
+
+    void printSpiral();
 }

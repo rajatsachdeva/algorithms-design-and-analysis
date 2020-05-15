@@ -1,12 +1,12 @@
 package com.rohan.dsa.foundations.tree;
 
-public class BinaryNode {
+public class TreeNode {
 
-    private int data;
-    private BinaryNode left;
-    private BinaryNode right;
+    public int data;
+    public TreeNode left;
+    public TreeNode right;
 
-    public BinaryNode(int data) {
+    public TreeNode(int data) {
         this.data = data;
     }
 
@@ -18,19 +18,19 @@ public class BinaryNode {
         this.data = data;
     }
 
-    public BinaryNode getLeft() {
+    public TreeNode getLeft() {
         return left;
     }
 
-    public void setLeft(BinaryNode left) {
+    public void setLeft(TreeNode left) {
         this.left = left;
     }
 
-    public BinaryNode getRight() {
+    public TreeNode getRight() {
         return right;
     }
 
-    public void setRight(BinaryNode right) {
+    public void setRight(TreeNode right) {
         this.right = right;
     }
 

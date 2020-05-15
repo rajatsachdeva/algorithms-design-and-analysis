@@ -1,12 +1,12 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 import static java.lang.Math.max;
 
 public class HeightOfBinaryTree {
 
-    public int height(BinaryNode root) {
+    public int height(TreeNode root) {
 
         if (root == null) {
             return -1;

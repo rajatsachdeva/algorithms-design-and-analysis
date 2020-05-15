@@ -1,6 +1,6 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 /**
  * Given roots of two tree, return true if they have same data and same structure
@@ -13,7 +13,7 @@ import com.rohan.dsa.foundations.tree.BinaryNode;
  */
 public class SameTree {
 
-    public boolean isSame(BinaryNode root1, BinaryNode root2) {
+    public boolean isSame(TreeNode root1, TreeNode root2) {
 
         if (root1 == null && root2 == null) {
             return true;

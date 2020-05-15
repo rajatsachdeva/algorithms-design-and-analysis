@@ -1,12 +1,12 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Stack;
 
 public class InOrderTraversal {
 
     //LVR
-    public void inOrder(BinaryNode root) {
+    public void inOrder(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -15,13 +15,13 @@ public class InOrderTraversal {
         inOrder(root.getRight());
     }
 
-    public void inOrderIterative(BinaryNode root) {
+    public void inOrderIterative(TreeNode root) {
 
         if (root == null) return;
-        Stack<BinaryNode> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
 
-        BinaryNode current = root;
+        TreeNode current = root;
 
         while (true) {
             if (current != null) {
@@ -32,7 +32,7 @@ public class InOrderTraversal {
                     break;
                 }
 
-                BinaryNode node = stack.pop();
+                TreeNode node = stack.pop();
                 System.out.print(node + " ");
 
                 if (current.getRight() != null) {

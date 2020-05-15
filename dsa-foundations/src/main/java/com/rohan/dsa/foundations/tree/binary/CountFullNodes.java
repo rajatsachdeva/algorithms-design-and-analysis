@@ -1,6 +1,6 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
 
 /**
@@ -10,7 +10,7 @@ import com.rohan.dsa.foundations.tree.Queue;
  */
 public class CountFullNodes {
 
-    public int countFullNodes(BinaryNode root) {
+    public int countFullNodes(TreeNode root) {
 
         if (root == null) {
             return 0;
@@ -20,13 +20,13 @@ public class CountFullNodes {
                 + countFullNodes(root.getRight());
     }
 
-    public int countFullNodesIterative(BinaryNode root) {
+    public int countFullNodesIterative(TreeNode root) {
         if (root == null) return 0;
 
-        Queue<BinaryNode> queue = new Queue<>();
+        Queue<TreeNode> queue = new Queue<>();
         queue.enqueue(root);
         int count = 0;
-        BinaryNode current;
+        TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.dequeue();
             if (isFullNode(current)) {
@@ -42,7 +42,7 @@ public class CountFullNodes {
         return count;
     }
 
-    private boolean isFullNode(BinaryNode node) {
+    private boolean isFullNode(TreeNode node) {
         return node.getLeft() != null && node.getRight() != null;
     }
 }

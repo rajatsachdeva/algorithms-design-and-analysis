@@ -1,11 +1,11 @@
 package com.rohan.dsa.foundations.tree.bst;
 
 import com.rohan.dsa.foundations.tree.Queue;
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class BinarySearchTree {
 
-    private BinaryNode root;
+    private TreeNode root;
 
     public BinarySearchTree() {
         root = null;
@@ -15,7 +15,7 @@ public class BinarySearchTree {
         root = insert(root, item);
     }
 
-    private BinaryNode insert(BinaryNode root, int item) {
+    private TreeNode insert(TreeNode root, int item) {
         // Only place where we create the node
         //
         return null;
@@ -25,7 +25,7 @@ public class BinarySearchTree {
         return search(root, item);
     }
 
-    private boolean search(BinaryNode root, int item) {
+    private boolean search(TreeNode root, int item) {
         if (root == null) {
             return false;
         } else if (item == root.getValue()) {
@@ -41,18 +41,18 @@ public class BinarySearchTree {
         delete(root, item);
     }
 
-    private void delete(BinaryNode root, int item) {
+    private void delete(TreeNode root, int item) {
         // TODO
     }
 
-    public BinaryNode min(BinaryNode root) {
+    public TreeNode min(TreeNode root) {
         if (root.getLeft() == null) {
             return root;
         }
         return min(root.getLeft());
     }
 
-    public BinaryNode max(BinaryNode root) {
+    public TreeNode max(TreeNode root) {
         if (root.getRight() == null) {
             return root;
         }
@@ -61,7 +61,7 @@ public class BinarySearchTree {
 
     // Traversal
     public void levelOrder() {
-        Queue<BinaryNode> queue = new Queue<>();
+        Queue<TreeNode> queue = new Queue<>();
     }
 
     public static void main(String[] args) {

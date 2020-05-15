@@ -1,11 +1,11 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
 
 public class FindMin {
 
-    public int min(BinaryNode root) {
+    public int min(TreeNode root) {
         if (root == null) {
             return Integer.MAX_VALUE;
         }
@@ -26,15 +26,15 @@ public class FindMin {
     }
 
 
-    public int minIterative(BinaryNode root) {
+    public int minIterative(TreeNode root) {
         if (root == null) {
             return Integer.MIN_VALUE;
         }
 
-        Queue<BinaryNode> queue = new Queue<>();
+        Queue<TreeNode> queue = new Queue<>();
         queue.enqueue(root);
         int min = Integer.MAX_VALUE;
-        BinaryNode current;
+        TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.dequeue();
             if (current.getValue() < min) {

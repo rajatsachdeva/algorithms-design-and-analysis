@@ -1,6 +1,6 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
 
 /**
@@ -8,7 +8,7 @@ import com.rohan.dsa.foundations.tree.Queue;
  */
 public class FindMax {
 
-    public int max(BinaryNode root) {
+    public int max(TreeNode root) {
         if (root == null) {
             return Integer.MIN_VALUE;
         }
@@ -29,15 +29,15 @@ public class FindMax {
     }
 
     // Using level Order traversal
-    public int maxIterative(BinaryNode root) {
+    public int maxIterative(TreeNode root) {
         if (root == null) {
             return Integer.MIN_VALUE;
         }
 
-        Queue<BinaryNode> queue = new Queue<>();
+        Queue<TreeNode> queue = new Queue<>();
         queue.enqueue(root);
         int max = Integer.MIN_VALUE;
-        BinaryNode current;
+        TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.dequeue();
             if (current.getValue() > max) {

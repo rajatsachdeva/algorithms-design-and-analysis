@@ -1,12 +1,12 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Stack;
 
 public class PreOrderTraversal {
 
     // VLR
-    public void preOrder(final BinaryNode root) {
+    public void preOrder(final TreeNode root) {
         if (root == null) {
             return;
         }
@@ -15,12 +15,12 @@ public class PreOrderTraversal {
         preOrder(root.getRight());
     }
 
-    public void preOrderIterative(final BinaryNode root) {
+    public void preOrderIterative(final TreeNode root) {
         if (root == null) return;
-        Stack<BinaryNode> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
 
-        BinaryNode current;
+        TreeNode current;
         while (!stack.isEmpty()) {
             current = stack.pop();
             System.out.print(current + " ");

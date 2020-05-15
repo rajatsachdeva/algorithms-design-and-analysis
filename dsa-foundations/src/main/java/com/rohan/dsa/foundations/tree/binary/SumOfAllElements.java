@@ -1,12 +1,12 @@
 package com.rohan.dsa.foundations.tree.binary;
 
 
-import com.rohan.dsa.foundations.tree.BinaryNode;
+import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
 
 public class SumOfAllElements {
 
-    public int sum(BinaryNode root) {
+    public int sum(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -15,15 +15,15 @@ public class SumOfAllElements {
     }
 
 
-    public int sumIterative(BinaryNode root) {
+    public int sumIterative(TreeNode root) {
         if (root == null) {
             return 0;
         }
 
-        Queue<BinaryNode> queue = new Queue<>();
+        Queue<TreeNode> queue = new Queue<>();
         queue.enqueue(root);
         int sum = 0;
-        BinaryNode current;
+        TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.dequeue();
             sum += current.getValue();

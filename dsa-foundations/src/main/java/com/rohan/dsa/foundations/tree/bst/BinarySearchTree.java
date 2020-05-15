@@ -1,6 +1,5 @@
 package com.rohan.dsa.foundations.tree.bst;
 
-import com.rohan.dsa.foundations.tree.Queue;
 import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class BinarySearchTree {
@@ -15,10 +14,17 @@ public class BinarySearchTree {
         root = insert(root, item);
     }
 
-    private TreeNode insert(TreeNode root, int item) {
-        // Only place where we create the node
-        //
-        return null;
+    private TreeNode insert(TreeNode root, int data) {
+        if (root == null) {
+            return new TreeNode(data);
+        } else {
+            if (root.getValue() > data) {
+                root.right = insert(root.right, data);
+            } else {
+                root.left = insert(root.left, data);
+            }
+        }
+        return root;
     }
 
     public boolean search(int item) {
@@ -41,28 +47,48 @@ public class BinarySearchTree {
         delete(root, item);
     }
 
-    private void delete(TreeNode root, int item) {
-        // TODO
+    private TreeNode delete(TreeNode root, int data) {
+        if (root == null) {
+            throw new IllegalStateException("Empty");
+        } else if (data < root.getValue()) {
+            root.left = delete(root.left, data);
+        } else if (data > root.getValue()) {
+            root.right = delete(root.right, data);
+        } else {
+            // Found
+            // Case 1: Both the children
+            if (root.left != null && root.right != null) {
+                TreeNode minElementNode = min(root);
+                root.setValue(minElementNode.getValue());
+                // Important: because we found it from the right
+                root.right = delete(root.right, minElementNode.getValue());
+            }
+            // Case 2: Single left child
+            else if (root.left != null) {
+                root = root.left;
+            }
+            // Case 2: Single right child
+            else if (root.right != null) {
+                root = root.right;
+            } else {
+                root = null;
+            }
+        }
+        return root;
     }
 
     public TreeNode min(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+
         if (root.getLeft() == null) {
             return root;
         }
+
         return min(root.getLeft());
     }
 
-    public TreeNode max(TreeNode root) {
-        if (root.getRight() == null) {
-            return root;
-        }
-        return max(root.getRight());
-    }
-
-    // Traversal
-    public void levelOrder() {
-        Queue<TreeNode> queue = new Queue<>();
-    }
 
     public static void main(String[] args) {
 

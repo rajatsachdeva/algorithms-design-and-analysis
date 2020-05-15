@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 /**
  * Inserting an element in a Binary tree.
@@ -15,11 +15,12 @@ public class InsertInBinaryTree {
             return new TreeNode(data);
         } else {
             if (root.getValue() > data) {
-                return insert(root.getRight(), data);
+                root.right = insert(root.right, data);
             } else {
-                return insert(root.getLeft(), data);
+                root.left = insert(root.left, data);
             }
         }
+        return root;
     }
 
     public TreeNode insertIterative(TreeNode root, int data) {

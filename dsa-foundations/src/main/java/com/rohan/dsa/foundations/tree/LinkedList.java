@@ -9,6 +9,18 @@ public class LinkedList<T> {
         return head == null;
     }
 
+    public void insertFirst(T item) {
+        Node<T> newNode = new Node<>(item);
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        size++;
+    }
+
     void insertLast(T data) {
         Node<T> newNode = new Node<>(data);
         if (isEmpty()) {
@@ -35,6 +47,7 @@ public class LinkedList<T> {
     int getSize() {
         return size;
     }
+
 
     private static class Node<T> {
         T data;

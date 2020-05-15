@@ -6,34 +6,31 @@ import com.rohan.dsa.foundations.tree.Queue;
 /**
  * Find the number of half nodes in the binary tree.
  * <p>
- * The set of all nodes having one child are called half nodes
+ * The set of all nodes having no left and right children
  */
-public class CountHalfNodes {
+public class CountLeafNodes {
 
-
-    public int countHalfNodes(BinaryNode root) {
+    public int countLeafNodes(BinaryNode root) {
 
         if (root == null) {
             return 0;
         }
-        return (isHalfNode(root) ? 1 : 0)
-                + countHalfNodes(root.getLeft())
-                + countHalfNodes(root.getRight());
+        return (isLeafNode(root) ? 1 : 0)
+                + countLeafNodes(root.getLeft())
+                + countLeafNodes(root.getRight());
     }
 
-    public int countHalfNodesIterative(BinaryNode root) {
-        if (root == null) {
-            return 0;
-        }
+    public int countLeafNodesIterative(BinaryNode root) {
+        if (root == null) return 0;
 
         Queue<BinaryNode> queue = new Queue<>();
         queue.enqueue(root);
         int count = 0;
         BinaryNode current;
         while (!queue.isEmpty()) {
-            current = queue.dequeue();
 
-            if (isHalfNode(current)) {
+            current = queue.dequeue();
+            if (isLeafNode(current)) {
                 count++;
             }
 
@@ -49,8 +46,7 @@ public class CountHalfNodes {
         return count;
     }
 
-    private boolean isHalfNode(BinaryNode node) {
-        return (node.getLeft() != null && node.getRight() == null) ||
-                (node.getLeft() == null && node.getRight() != null);
+    private boolean isLeafNode(BinaryNode node) {
+        return node.getLeft() == null && node.getRight() == null;
     }
 }

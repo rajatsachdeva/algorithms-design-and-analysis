@@ -102,25 +102,6 @@ public class BinaryTree {
         }
     }
 
-    public boolean search(int data) {
-        Queue<BinaryNode> queue = new Queue<>();
-        queue.enqueue(root);
-        while (!queue.isEmpty()) {
-            BinaryNode first = queue.dequeue();
-            if (first.getValue() == data) {
-                return true;
-            }
-            if (first.getLeft() != null) {
-                queue.enqueue(first.getLeft());
-            }
-            if (first.getRight() != null) {
-                queue.enqueue(first.getRight());
-            }
-        }
-
-        return false;
-    }
-
     public void delete() {
         root = null;
     }
@@ -129,112 +110,16 @@ public class BinaryTree {
         return root == null;
     }
 
-    // Traversals
-
-    // VLR
-    public static void preOrder(BinaryNode root) {
-        if (root == null) {
-            return;
-        }
-        System.out.print(root);
-        preOrder(root.getLeft());
-        preOrder(root.getRight());
+    public BinaryNode getRoot() {
+        return root;
     }
-
-    //LVR
-    public static void inOrder(BinaryNode root) {
-        if (root == null) {
-            return;
-        }
-        inOrder(root.getLeft());
-        System.out.print(root);
-        inOrder(root.getRight());
-    }
-
-    public static void postOrder(BinaryNode root) {
-        if (root == null) {
-            return;
-        }
-        postOrder(root.getLeft());
-        postOrder(root.getRight());
-        System.out.print(root);
-    }
-
-    public void levelOrder() {
-        Queue<BinaryNode> queue = new Queue<>();
-        queue.enqueue(root);
-        BinaryNode first = null;
-        while (!queue.isEmpty()) {
-            first = queue.dequeue();
-            BinaryNode leftChild = first.getLeft();
-            BinaryNode rightChild = first.getRight();
-            if (leftChild != null) {
-                queue.enqueue(leftChild);
-            }
-            if (rightChild != null) {
-                queue.enqueue(rightChild);
-            }
-            System.out.print(first);
-        }
-        System.out.println("");
-    }
-
 
     public static void main(String[] args) {
         //Create a blank Tree
         BinaryTree tree = new BinaryTree();
-
-
         //Insert 10 nodes in the tree
         System.out.println("Inserting 10 nodes to tree");
         for (int i = 1; i <= 10; i++)
             tree.insert(i * 10);
-
-
-        System.out.println("\nLevel-order of tree:");
-        tree.levelOrder();
-        System.out.println();
-
-        System.out.println("\nPre-order of tree:");
-        tree.preOrder(tree.root);
-        System.out.println();
-
-
-        System.out.println("\nPost-order of tree:");
-        tree.postOrder(tree.root);
-        System.out.println();
-
-
-        System.out.println("\nIn-order of tree:");
-        tree.inOrder(tree.root);
-        System.out.println();
-
-
-        System.out.println("\nSearching node 50 in the tree...");
-        tree.search(50);
-
-
-        System.out.println("\nSearching node 500 in the tree...");
-        tree.search(500);
-
-
-        System.out.println("\nDeleting node having value-5 in the tree...");
-        tree.remove(5);
-
-
-        System.out.println("\nDeleting node having value-50 in the tree...");
-        tree.remove(50);
-        tree.levelOrder();
-
-/*        System.out.println("\n\nDeleting node having value-10 in the tree...");
-        tree.remove(10);
-        tree.levelOrder();
-
-        System.out.println("\n\nDeleting node having value-80 in the tree...");
-        tree.remove(80);
-        tree.levelOrder();
-
-        System.out.println("Deleting the entire Tree");
-        tree.delete();*/
     }
 }

@@ -1,4 +1,4 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-public class PreOrderTraversalIterative {
+public class WidthOfATree {
 }

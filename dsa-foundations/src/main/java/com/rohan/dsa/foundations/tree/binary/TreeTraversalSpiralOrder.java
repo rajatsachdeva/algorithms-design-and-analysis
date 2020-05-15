@@ -1,4 +1,4 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-public class PostOrderTraversaliterative {
+public class TreeTraversalSpiralOrder {
 }

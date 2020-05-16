@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 /**
  * Find the number of full nodes in the binary tree.
@@ -16,8 +16,8 @@ public class CountFullNodes {
             return 0;
         }
         return (isFullNode(root) ? 1 : 0)
-                + countFullNodes(root.getLeft())
-                + countFullNodes(root.getRight());
+                + countFullNodes(root.left)
+                + countFullNodes(root.right);
     }
 
     public int countFullNodesIterative(TreeNode root) {
@@ -32,17 +32,17 @@ public class CountFullNodes {
             if (isFullNode(current)) {
                 count++;
             }
-            if (current.getLeft() != null) {
-                queue.enqueue(current.getLeft());
+            if (current.left != null) {
+                queue.enqueue(current.left);
             }
-            if (current.getRight() != null) {
-                queue.enqueue(current.getRight());
+            if (current.right != null) {
+                queue.enqueue(current.right);
             }
         }
         return count;
     }
 
     private boolean isFullNode(TreeNode node) {
-        return node.getLeft() != null && node.getRight() != null;
+        return node.left != null && node.right != null;
     }
 }

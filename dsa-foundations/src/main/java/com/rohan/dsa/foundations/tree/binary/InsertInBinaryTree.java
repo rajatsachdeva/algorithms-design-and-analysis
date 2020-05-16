@@ -14,7 +14,7 @@ public class InsertInBinaryTree {
         if (root == null) {
             return new TreeNode(data);
         } else {
-            if (root.getValue() > data) {
+            if (root.data > data) {
                 root.right = insert(root.right, data);
             } else {
                 root.left = insert(root.left, data);
@@ -36,17 +36,17 @@ public class InsertInBinaryTree {
         TreeNode present;
         while (!queue.isEmpty()) {
             present = queue.dequeue();
-            if (present.getLeft() == null) {
-                present.setLeft(newNode);
+            if (present.left == null) {
+                present.left = newNode;
                 return root;
             }
-            if (present.getRight() == null) {
-                present.setRight(newNode);
+            if (present.right == null) {
+                present.right = newNode;
                 return root;
             }
 
-            queue.enqueue(present.getLeft());
-            queue.enqueue(present.getRight());
+            queue.enqueue(present.left);
+            queue.enqueue(present.right);
         }
         return root;
     }

@@ -12,8 +12,8 @@ public class HeightOfBinaryTree {
             return -1;
         }
 
-        int leftHeight = height(root.getLeft());
-        int rightHeight = height(root.getRight());
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
 
         return 1 + max(leftHeight, rightHeight);
     }

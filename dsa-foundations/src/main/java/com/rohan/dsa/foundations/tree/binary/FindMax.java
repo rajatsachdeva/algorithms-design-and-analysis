@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 /**
  * Find the maximum element in a binary tree with and without recursion.
@@ -13,9 +13,9 @@ public class FindMax {
             return Integer.MIN_VALUE;
         }
 
-        int currMax = root.getValue();
-        int leftMax = max(root.getLeft());
-        int rightMax = max(root.getRight());
+        int currMax = root.data;
+        int leftMax = max(root.left);
+        int rightMax = max(root.right);
 
         if (leftMax > currMax) {
             currMax = leftMax;
@@ -40,18 +40,17 @@ public class FindMax {
         TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.dequeue();
-            if (current.getValue() > max) {
-                max = current.getValue();
+            if (current.data > max) {
+                max = current.data;
             }
 
-            if (current.getLeft() != null) {
-                queue.enqueue(current.getLeft());
+            if (current.left != null) {
+                queue.enqueue(current.left);
             }
-            if (current.getRight() != null) {
-                queue.enqueue((current.getRight()));
+            if (current.right != null) {
+                queue.enqueue((current.right));
             }
         }
         return max;
     }
-
 }

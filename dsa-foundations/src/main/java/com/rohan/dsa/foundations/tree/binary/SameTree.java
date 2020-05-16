@@ -23,8 +23,8 @@ public class SameTree {
             return false;
         }
 
-        return (root1.getValue() == root2.getValue()) &&
-                isSame(root1.getLeft(), root2.getLeft()) &&
-                isSame(root1.getRight(), root2.getRight());
+        return (root1.data == root2.data) &&
+                isSame(root1.left, root2.left) &&
+                isSame(root1.right, root2.right);
     }
 }

@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class LevelOrderTraversal {
 
@@ -11,8 +11,8 @@ public class LevelOrderTraversal {
         TreeNode first = null;
         while (!queue.isEmpty()) {
             first = queue.dequeue();
-            TreeNode leftChild = first.getLeft();
-            TreeNode rightChild = first.getRight();
+            TreeNode leftChild = first.left;
+            TreeNode rightChild = first.right;
             if (leftChild != null) {
                 queue.enqueue(leftChild);
             }

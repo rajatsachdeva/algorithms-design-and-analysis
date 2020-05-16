@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class SearchInBinaryTree {
 
@@ -9,11 +9,11 @@ public class SearchInBinaryTree {
         if (root == null) {
             return false;
         }
-        if (root.getValue() == data) {
+        if (root.data == data) {
             return true;
         }
 
-        return search(root.getLeft(), data) || search(root.getRight(), data);
+        return search(root.left, data) || search(root.right, data);
     }
 
     public boolean searchIterative(TreeNode root, int data) {
@@ -24,17 +24,16 @@ public class SearchInBinaryTree {
         queue.enqueue(root);
         while (!queue.isEmpty()) {
             TreeNode first = queue.dequeue();
-            if (first.getValue() == data) {
+            if (first.data == data) {
                 return true;
             }
-            if (first.getLeft() != null) {
-                queue.enqueue(first.getLeft());
+            if (first.left != null) {
+                queue.enqueue(first.left);
             }
-            if (first.getRight() != null) {
-                queue.enqueue(first.getRight());
+            if (first.right != null) {
+                queue.enqueue(first.right);
             }
         }
-
         return false;
     }
 

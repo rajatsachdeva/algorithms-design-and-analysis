@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class DeleteInBinaryTree {
 
@@ -16,9 +16,9 @@ public class DeleteInBinaryTree {
         TreeNode present;
         while (!queue.isEmpty()) {
             present = queue.dequeue();
-            if (present.getValue() == data) {
+            if (present.data == data) {
                 TreeNode deepestNode = getDeepestNode(root);
-                present.setValue(deepestNode.getValue());
+                present.data = deepestNode.data;
                 deleteDeepestNode(root);
                 break;
             }
@@ -31,12 +31,12 @@ public class DeleteInBinaryTree {
         TreeNode deepest = null;
         while (!queue.isEmpty()) {
             deepest = queue.dequeue();
-            if (deepest.getLeft() != null) {
-                queue.enqueue(deepest.getLeft());
+            if (deepest.left != null) {
+                queue.enqueue(deepest.left);
             }
 
-            if (deepest.getRight() != null) {
-                queue.enqueue(deepest.getRight());
+            if (deepest.right != null) {
+                queue.enqueue(deepest.right);
             }
         }
         return deepest;
@@ -54,17 +54,17 @@ public class DeleteInBinaryTree {
         while (!queue.isEmpty()) {
             present = queue.dequeue();
             previous = present;
-            if (present.getLeft() == null) {
-                previous.setRight(null);
+            if (present.left == null) {
+                previous.right = null;
             }
 
-            if (present.getRight() == null) {
-                present.setLeft(null);
+            if (present.right == null) {
+                present.left = null;
                 return;
             }
 
-            queue.enqueue(present.getLeft());
-            queue.enqueue(present.getRight());
+            queue.enqueue(present.left);
+            queue.enqueue(present.right);
         }
     }
 }

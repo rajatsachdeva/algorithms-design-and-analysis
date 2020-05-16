@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 /**
  * Find the number of half nodes in the binary tree.
@@ -16,8 +16,8 @@ public class CountLeafNodes {
             return 0;
         }
         return (isLeafNode(root) ? 1 : 0)
-                + countLeafNodes(root.getLeft())
-                + countLeafNodes(root.getRight());
+                + countLeafNodes(root.left)
+                + countLeafNodes(root.right);
     }
 
     public int countLeafNodesIterative(TreeNode root) {
@@ -34,12 +34,12 @@ public class CountLeafNodes {
                 count++;
             }
 
-            if (current.getLeft() != null) {
-                queue.enqueue(current.getLeft());
+            if (current.left != null) {
+                queue.enqueue(current.left);
             }
 
-            if (current.getRight() != null) {
-                queue.enqueue(current.getRight());
+            if (current.right != null) {
+                queue.enqueue(current.right);
             }
         }
 
@@ -47,6 +47,6 @@ public class CountLeafNodes {
     }
 
     private boolean isLeafNode(TreeNode node) {
-        return node.getLeft() == null && node.getRight() == null;
+        return node.left == null && node.right == null;
     }
 }

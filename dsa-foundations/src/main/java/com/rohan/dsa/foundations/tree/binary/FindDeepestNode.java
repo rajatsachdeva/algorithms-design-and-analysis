@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class FindDeepestNode {
 
@@ -11,12 +11,12 @@ public class FindDeepestNode {
         TreeNode node = null;
         while (!queue.isEmpty()) {
             node = queue.dequeue();
-            if (node.getLeft() != null) {
-                queue.enqueue(node.getLeft());
+            if (node.left != null) {
+                queue.enqueue(node.left);
             }
 
-            if (node.getRight() != null) {
-                queue.enqueue(node.getRight());
+            if (node.right != null) {
+                queue.enqueue(node.right);
             }
         }
 

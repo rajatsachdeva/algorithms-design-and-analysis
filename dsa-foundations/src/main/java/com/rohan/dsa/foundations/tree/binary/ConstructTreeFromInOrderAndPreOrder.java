@@ -54,15 +54,11 @@ public class ConstructTreeFromInOrderAndPreOrder {
         int rightInOrderEnd = inOrderEnd;
 
         TreeNode root = new TreeNode(rootData);
-        root.setLeft(
-                createTreeHelper(inOrder, preOrder, leftInOrderStart, leftInOrderEnd,
-                        leftPreOrderStart, leftPreOrderEnd)
-        );
+        root.left = createTreeHelper(inOrder, preOrder, leftInOrderStart, leftInOrderEnd,
+                leftPreOrderStart, leftPreOrderEnd);
 
-        root.setRight(
-                createTreeHelper(inOrder, preOrder, rightInOrderStart, rightInOrderEnd,
-                        rightPreOrderStart, rightPreOrderEnd)
-        );
+        root.right = createTreeHelper(inOrder, preOrder, rightInOrderStart, rightInOrderEnd,
+                rightPreOrderStart, rightPreOrderEnd);
 
         return root;
     }

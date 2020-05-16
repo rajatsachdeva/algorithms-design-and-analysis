@@ -18,7 +18,7 @@ public class BinarySearchTree {
         if (root == null) {
             return new TreeNode(data);
         } else {
-            if (root.getValue() > data) {
+            if (root.data > data) {
                 root.right = insert(root.right, data);
             } else {
                 root.left = insert(root.left, data);
@@ -34,12 +34,12 @@ public class BinarySearchTree {
     private boolean search(TreeNode root, int item) {
         if (root == null) {
             return false;
-        } else if (item == root.getValue()) {
+        } else if (item == root.data) {
             return true;
-        } else if (item > root.getValue()) {
-            return search(root.getRight(), item);
+        } else if (item > root.data) {
+            return search(root.right, item);
         } else {
-            return search(root.getRight(), item);
+            return search(root.left, item);
         }
     }
 
@@ -50,18 +50,18 @@ public class BinarySearchTree {
     private TreeNode delete(TreeNode root, int data) {
         if (root == null) {
             throw new IllegalStateException("Empty");
-        } else if (data < root.getValue()) {
+        } else if (data < root.data) {
             root.left = delete(root.left, data);
-        } else if (data > root.getValue()) {
+        } else if (data > root.data) {
             root.right = delete(root.right, data);
         } else {
             // Found
             // Case 1: Both the children
             if (root.left != null && root.right != null) {
                 TreeNode minElementNode = min(root);
-                root.setValue(minElementNode.getValue());
+                root.data = minElementNode.data;
                 // Important: because we found it from the right
-                root.right = delete(root.right, minElementNode.getValue());
+                root.right = delete(root.right, minElementNode.data);
             }
             // Case 2: Single left child
             else if (root.left != null) {
@@ -82,16 +82,9 @@ public class BinarySearchTree {
             return null;
         }
 
-        if (root.getLeft() == null) {
+        if (root.left == null) {
             return root;
         }
-
-        return min(root.getLeft());
+        return min(root.left);
     }
-
-
-    public static void main(String[] args) {
-
-    }
-
 }

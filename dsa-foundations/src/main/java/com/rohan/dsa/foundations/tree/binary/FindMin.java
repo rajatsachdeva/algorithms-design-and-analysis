@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class FindMin {
 
@@ -10,9 +10,9 @@ public class FindMin {
             return Integer.MAX_VALUE;
         }
 
-        int currMin = root.getValue();
-        int leftMin = min(root.getLeft());
-        int rightMin = min(root.getRight());
+        int currMin = root.data;
+        int leftMin = min(root.left);
+        int rightMin = min(root.right);
 
         if (leftMin < currMin) {
             currMin = leftMin;
@@ -37,17 +37,16 @@ public class FindMin {
         TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.dequeue();
-            if (current.getValue() < min) {
-                min = current.getValue();
+            if (current.data < min) {
+                min = current.data;
             }
-            if (current.getLeft() != null) {
-                queue.enqueue(current.getLeft());
+            if (current.left != null) {
+                queue.enqueue(current.left);
             }
-            if (current.getRight() != null) {
-                queue.enqueue((current.getRight()));
+            if (current.right != null) {
+                queue.enqueue((current.right));
             }
         }
         return min;
     }
-
 }

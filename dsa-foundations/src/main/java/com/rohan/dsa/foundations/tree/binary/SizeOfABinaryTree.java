@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Queue;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 /**
  * Given a root of binary tree, return size of binar tree
@@ -25,8 +25,8 @@ public class SizeOfABinaryTree {
             return 0;
         }
 
-        int leftSize = size(root.getLeft());
-        int rightSize = size(root.getRight());
+        int leftSize = size(root.left);
+        int rightSize = size(root.right);
 
         return 1 + leftSize + rightSize;
     }
@@ -41,11 +41,11 @@ public class SizeOfABinaryTree {
         while (!queue.isEmpty()) {
             current = queue.dequeue();
             size++;
-            if (current.getLeft() != null) {
-                queue.enqueue(current.getLeft());
+            if (current.left != null) {
+                queue.enqueue(current.left);
             }
-            if (current.getRight() != null) {
-                queue.enqueue(current.getRight());
+            if (current.right != null) {
+                queue.enqueue(current.right);
             }
         }
 

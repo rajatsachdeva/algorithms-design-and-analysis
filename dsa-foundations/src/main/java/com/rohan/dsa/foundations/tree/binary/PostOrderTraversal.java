@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Stack;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class PostOrderTraversal {
 
@@ -9,11 +9,12 @@ public class PostOrderTraversal {
         if (root == null) {
             return;
         }
-        postOrder(root.getLeft());
-        postOrder(root.getRight());
+        postOrder(root.left);
+        postOrder(root.right);
         System.out.print(root);
     }
 
+    // TODO: Add explanation
     public void postOrderIterative(final TreeNode root) {
 
         if (root == null) return;
@@ -26,12 +27,12 @@ public class PostOrderTraversal {
         while (!s1.isEmpty()) {
             current = s1.pop();
 
-            if (current.getLeft() != null) {
-                s1.push(current.getLeft());
+            if (current.left != null) {
+                s1.push(current.left);
             }
 
-            if (current.getRight() != null) {
-                s1.push(current.getRight());
+            if (current.right != null) {
+                s1.push(current.right);
             }
             s2.push(current);
         }
@@ -44,5 +45,4 @@ public class PostOrderTraversal {
     public void postOrderTraversalUsingSingleStack(final TreeNode root) {
         // TODO
     }
-
 }

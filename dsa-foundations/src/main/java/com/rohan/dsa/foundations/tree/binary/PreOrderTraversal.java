@@ -1,7 +1,7 @@
 package com.rohan.dsa.foundations.tree.binary;
 
-import com.rohan.dsa.foundations.tree.TreeNode;
 import com.rohan.dsa.foundations.tree.Stack;
+import com.rohan.dsa.foundations.tree.TreeNode;
 
 public class PreOrderTraversal {
 
@@ -11,8 +11,8 @@ public class PreOrderTraversal {
             return;
         }
         System.out.print(root);
-        preOrder(root.getLeft());
-        preOrder(root.getRight());
+        preOrder(root.left);
+        preOrder(root.right);
     }
 
     public void preOrderIterative(final TreeNode root) {
@@ -24,11 +24,11 @@ public class PreOrderTraversal {
         while (!stack.isEmpty()) {
             current = stack.pop();
             System.out.print(current + " ");
-            if (current.getRight() != null) {
-                stack.push(current.getRight());
+            if (current.right != null) {
+                stack.push(current.right);
             }
-            if (current.getLeft() != null) {
-                stack.push(current.getLeft());
+            if (current.left != null) {
+                stack.push(current.left);
             }
         }
     }

@@ -19,7 +19,7 @@ public class InOrderTraversal {
         if (root == null) return;
         Stack<TreeNode> stack = new Stack<>();
         TreeNode current = root;
-        while (!stack.isEmpty()) {
+        while (true) {
 
             // if current node is not null, push it to the stack (defer it)
             // and move to its left child
@@ -29,6 +29,10 @@ public class InOrderTraversal {
             } else {
                 // else if current node is null, we pop an element from stack,
                 // print it and finally set current node to its right child
+                if (stack.isEmpty()) {
+                    break;
+                }
+
                 current = stack.pop();
                 System.out.print(current + " ");
                 current = current.right;

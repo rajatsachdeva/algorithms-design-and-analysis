@@ -110,8 +110,6 @@ public class TreeTraversalLevelByLevel {
         TreeTraversalLevelByLevel traversal = new TreeTraversalLevelByLevel();
         traversal.traverseByLevelUsingTwoQueues(root);
         traversal.traverseByLevelUsingDelimiter(root);
-
-
     }
 
 }

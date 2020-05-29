@@ -1,4 +1,4 @@
-package com.rohan.dsa.foundations.graph;
+package com.rohan.dsa.foundations.graph.mst;
 
 /**
  * Minimum Spanning Tree

@@ -1,4 +1,4 @@
-package com.rohan.dsa.foundations.graph;
+package com.rohan.dsa.foundations.graph.apsp;
 
 /**
  * All Pair Shortest Path

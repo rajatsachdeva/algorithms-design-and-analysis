@@ -3,7 +3,7 @@ package com.rohan.dsa.foundations.graph.node;
 import java.util.*;
 
 /**
- * A sophisticated implementation using Adjaceny List
+ * A sophisticated implementation using Adjacency List
  */
 public class Graph<T> {
     private List<Edge<T>> edges;
@@ -16,13 +16,17 @@ public class Graph<T> {
         this.vertices = new HashMap<>();
     }
 
+    public Graph() {
+        this(false);
+    }
+
     public void addEdge(int sourceId, int destinationId) {
         addEdge(sourceId, destinationId, 0);
     }
 
     public void addEdge(int sourceId, int destinationId, int weight) {
         Vertex<T> sourceVertex = getVertex(sourceId);
-        Vertex<T> destinationVertex = getVertex(sourceId);
+        Vertex<T> destinationVertex = getVertex(destinationId);
         Edge<T> edge = new Edge<>(sourceVertex, destinationVertex, weight, directed);
         edges.add(edge);
         sourceVertex.addAdjacentVertex(edge, destinationVertex);
@@ -45,7 +49,7 @@ public class Graph<T> {
         return edges;
     }
 
-    public Collection<Vertex<T>> getAllVertex() {
+    public Collection<Vertex<T>> getVertices() {
         return vertices.values();
     }
 

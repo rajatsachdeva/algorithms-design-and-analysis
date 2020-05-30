@@ -3,7 +3,7 @@ package com.rohan.dsa.foundations.graph.node;
 import java.util.*;
 
 /**
- * A sophisticated implementation using Adjacency List
+ * A sophisticated implementation using Adjacency List.
  */
 public class Graph<T> {
     private List<Edge<T>> edges;
@@ -60,11 +60,15 @@ public class Graph<T> {
         }
     }
 
+    public Vertex<T> getVertexAt(int index) {
+        return vertices.get(index);
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (Edge<T> edge : getEdges()) {
-            builder.append(edge.getSource() + " " + edge.getDestination() + " " + edge.getWeight());
+            builder.append(edge.getSource() + " - " + edge.getDestination() + " - W:" + edge.getWeight());
             builder.append("\n");
         }
         return builder.toString();
@@ -75,6 +79,7 @@ public class Graph<T> {
         private T data;
         private List<Edge<T>> edges;
         private List<Vertex<T>> adjacentVertices;
+        private Vertex<T> parent;
 
         public Vertex(int id, T data) {
             this.id = id;
@@ -116,6 +121,14 @@ public class Graph<T> {
             return adjacentVertices;
         }
 
+        public void setParent(Vertex<T> parent) {
+            this.parent = parent;
+        }
+
+        public Vertex<T> getParent() {
+            return parent;
+        }
+
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -139,7 +152,6 @@ public class Graph<T> {
     }
 
     public static class Edge<T> {
-
         private Vertex<T> source;
         private Vertex<T> destination;
         private int weight;

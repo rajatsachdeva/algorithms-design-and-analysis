@@ -6,7 +6,7 @@ import java.util.Vector;
 /**
  * Max value is the highest priority. Implemented using MaxHeap
  * <p>
- * // Index is 0 based for vectors...
+ * Index is 0 based for vectors...
  */
 public class PriorityQueue {
 

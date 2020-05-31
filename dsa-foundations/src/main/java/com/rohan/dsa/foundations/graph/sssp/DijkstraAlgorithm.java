@@ -1,6 +1,6 @@
 package com.rohan.dsa.foundations.graph.sssp;
 
-import com.rohan.dsa.foundations.graph.MinBinaryHeap;
+import com.rohan.dsa.foundations.graph.MinPriorityQueue;
 import com.rohan.dsa.foundations.graph.node.Graph;
 import com.rohan.dsa.foundations.graph.node.Graph.Edge;
 import com.rohan.dsa.foundations.graph.node.Graph.Vertex;
@@ -10,28 +10,24 @@ import java.util.Map;
 
 /**
  * Single Source Shortest Path
- * <p>
- * <p>
- * <p>
+
  * Time Complexity
- * TODO
  * Space complexity - O(E + V)
  * Time complexity - O(ElogV)
- * <p>
+ *
  * References:-
- * <p>
+ *
  * https://www.youtube.com/watch?v=smHnz2RHJBY (Hinglish) - Concept
  * https://www.youtube.com/watch?v=FSm1zybd0Tk (Impl)
  * https://www.youtube.com/watch?v=lAXZGERcDf4&t=17s (Impl)
  * https://www.youtube.com/watch?v=2E7MmKv0Y24&index=16&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb (MIT)
- * https://www.techiedelight.com/single-source-shortest-paths-dijkstras-algorithm
  */
 public class DijkstraAlgorithm {
 
-    public void shortestPath(Graph<Integer> graph, Vertex<Integer> sourceVertex) {
+    public Map<Vertex<Integer>, Integer> shortestPath(Graph<Integer> graph, Vertex<Integer> sourceVertex) {
 
         // Priority queue, so that we can select a minimum cost vertex each time
-        MinBinaryHeap<Vertex<Integer>> minPriorityQueue = new MinBinaryHeap<>();
+        MinPriorityQueue<Vertex<Integer>> minPriorityQueue = new MinPriorityQueue<>();
 
         // Distance Map; Stores shortest distance from root(source) to every vertex
         Map<Vertex<Integer>, Integer> distance = new HashMap<>();
@@ -56,7 +52,7 @@ public class DijkstraAlgorithm {
         // Iterate till PQ is empty
         while (!minPriorityQueue.isEmpty()) {
             // Get the min value from heap node which has vertex and distance of that vertex from source vertex.
-            MinBinaryHeap<Vertex<Integer>>.Node node = minPriorityQueue.extractMinNode();
+            MinPriorityQueue<Vertex<Integer>>.Node node = minPriorityQueue.extractMinNode();
             Vertex<Integer> current = node.key;
 
             // Update shortest distance of current vertex from the source vertex
@@ -65,12 +61,29 @@ public class DijkstraAlgorithm {
             // Iterate through all the edges of current vertex
             for (Edge<Integer> edge : current.getEdges()) {
 
-                //TODO:
+                // Get the adjacent vertex
+                Vertex<Integer> adjacent = edge.getAdjacentVertex(current);
 
+                // If heap does not contain vertex means adjacent vertex already has shortest distance from source vertex
+                if (!minPriorityQueue.containsData(adjacent)) {
+                    // Means the node is already visited and distance is already decided
+                    continue;
+                }
+
+                // Add distance of current vertex to edge weight to get distance of adjacent vertex from the source vertex
+                // when it goes through current vertex
+                int newDistance = distance.get(current) + edge.getWeight();
+
+                // Check if this above calculated distance is less than current distance stored for adjacent vertex from
+                // source vertex.
+                int adjacentWeight = minPriorityQueue.getWeight(adjacent);
+                if (adjacentWeight > newDistance) {
+                    minPriorityQueue.update(adjacent, newDistance);
+                    parent.put(adjacent, current);
+                }
             }
-
-
         }
+        return distance;
     }
 
     public static void main(String[] args) {
@@ -86,6 +99,30 @@ public class DijkstraAlgorithm {
         graph.addEdge(3, 4, 3);
 
         DijkstraAlgorithm algorithm = new DijkstraAlgorithm();
+        Vertex<Integer> sourceVertex = graph.getVertexAt(1);
+        final Map<Vertex<Integer>, Integer> distance = algorithm.shortestPath(graph, sourceVertex);
 
+        /*
+          Expected : {1=0, 2=5, 3=7, 4=7, 5=3, 6=5}
+         */
+        System.out.println(distance);
+
+        Graph<Integer> directedGraph = new Graph<>(true);
+
+        directedGraph.addEdge(10, 20, 10);
+        directedGraph.addEdge(10, 30, 5);
+        directedGraph.addEdge(20, 40, 1);
+        directedGraph.addEdge(30, 20, 3);
+        directedGraph.addEdge(30, 40, 9);
+        directedGraph.addEdge(30, 50, 2);
+        directedGraph.addEdge(50, 10, 2);
+
+        sourceVertex = directedGraph.getVertexAt(10);
+        final Map<Vertex<Integer>, Integer> directedDistance = algorithm.shortestPath(directedGraph, sourceVertex);
+
+        /*
+          Expected : {10=0, 20=8, 30=5, 40=9, 50=7}
+         */
+        System.out.println(directedDistance);
     }
 }

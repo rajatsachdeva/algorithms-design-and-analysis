@@ -60,8 +60,8 @@ public class Graph<T> {
         }
     }
 
-    public Vertex<T> getVertexAt(int index) {
-        return vertices.get(index);
+    public Vertex<T> getVertexAt(int id) {
+        return vertices.get(id);
     }
 
     @Override
@@ -134,15 +134,12 @@ public class Graph<T> {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             Vertex<?> vertex = (Vertex<?>) o;
-            return id == vertex.id &&
-                    Objects.equals(data, vertex.data) &&
-                    Objects.equals(edges, vertex.edges) &&
-                    Objects.equals(adjacentVertices, vertex.adjacentVertices);
+            return id == vertex.id; // Important
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(id, data, edges, adjacentVertices);
+            return Objects.hash(id);
         }
 
         @Override
@@ -230,6 +227,10 @@ public class Graph<T> {
                     ", weight=" + weight +
                     ", isDirected=" + isDirected +
                     '}';
+        }
+
+        public Vertex<T> getAdjacentVertex(Vertex<T> current) {
+            return source.equals(current) ? destination : source;
         }
     }
 }

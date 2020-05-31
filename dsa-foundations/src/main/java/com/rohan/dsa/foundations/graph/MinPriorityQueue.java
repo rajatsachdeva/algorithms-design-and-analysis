@@ -16,7 +16,7 @@ import java.util.Map;
  * It is a combination of binary heap and hash map
  *
  */
-public class MinBinaryHeap<T> {
+public class MinPriorityQueue<T> {
 
     private List<Node> allNodes = new ArrayList<>();
     private Map<T, Integer> nodePosition = new HashMap<>();
@@ -144,6 +144,9 @@ public class MinBinaryHeap<T> {
         }
     }
 
+    public boolean containsData(T key) {
+        return nodePosition.containsKey(key);
+    }
 
     /**
      * Get the heap min without extracting the key
@@ -162,7 +165,7 @@ public class MinBinaryHeap<T> {
     /**
      * Get the weight of given key
      */
-    public Integer getWeight(int key) {
+    public Integer getWeight(T key) {
         Integer position = nodePosition.get(key);
         if (position == null) {
             return null;
@@ -216,8 +219,9 @@ public class MinBinaryHeap<T> {
         nodePosition.put(currentKey, currentIndex);
     }
 
+
     public static void main(String args[]) {
-        MinBinaryHeap<String> heap = new MinBinaryHeap();
+        MinPriorityQueue<String> heap = new MinPriorityQueue();
         heap.add(3, "Gon");
         heap.add(4, "Ichigo");
         heap.add(7, "Naruto");

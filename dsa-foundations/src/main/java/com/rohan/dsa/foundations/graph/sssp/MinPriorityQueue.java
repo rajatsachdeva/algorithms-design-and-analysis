@@ -23,6 +23,7 @@ public class MinPriorityQueue<T> {
     private int size;
 
     public class Node {
+
         public int weight;
         public T key;
 
@@ -38,6 +39,7 @@ public class MinPriorityQueue<T> {
         public String toString() {
             return weight + " " + key;
         }
+
     }
 
     public void add(int weight, T key) {
@@ -85,6 +87,10 @@ public class MinPriorityQueue<T> {
                 break;
             }
         }
+    }
+
+    public T extractMin() {
+        return extractMinNode().key;
     }
 
     /**

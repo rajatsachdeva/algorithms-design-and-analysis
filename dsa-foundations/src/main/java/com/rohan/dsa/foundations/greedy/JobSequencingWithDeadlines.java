@@ -1,4 +1,4 @@
 package com.rohan.dsa.foundations.greedy;
 
-public class Test {
+public class JobSequencingWithDeadlines {
 }

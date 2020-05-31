@@ -1,6 +1,5 @@
 package com.rohan.dsa.foundations.graph.sssp;
 
-import com.rohan.dsa.foundations.graph.MinPriorityQueue;
 import com.rohan.dsa.foundations.graph.node.Graph;
 import com.rohan.dsa.foundations.graph.node.Graph.Edge;
 import com.rohan.dsa.foundations.graph.node.Graph.Vertex;

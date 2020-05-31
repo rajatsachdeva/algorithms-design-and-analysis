@@ -3,5 +3,5 @@ package com.rohan.dsa.foundations.graph.mst;
 /**
  * Minimum Spanning Tree
  */
-public class KruskalAlgorithm {
+public class KruskalsAlgorithm {
 }

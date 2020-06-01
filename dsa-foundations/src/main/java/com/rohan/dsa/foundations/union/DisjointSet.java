@@ -67,6 +67,8 @@ public class DisjointSet<T> {
      * Find the representative recursively and does path
      * compression as well.
      *
+     * By compression we will find the node fast
+     *
      * @param node
      * @return
      */

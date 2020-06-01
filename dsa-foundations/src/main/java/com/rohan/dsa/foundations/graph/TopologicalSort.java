@@ -8,7 +8,6 @@ import java.util.Set;
 import java.util.Stack;
 
 /**
- *
  * Given a directed acyclic graph, do a topological sort on this graph.
  *
  * Do DFS by keeping visited. Put the vertex which are completely explored into a stack.

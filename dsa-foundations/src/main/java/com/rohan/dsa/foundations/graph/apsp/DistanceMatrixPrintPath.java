@@ -1,4 +1,4 @@
 package com.rohan.dsa.foundations.graph.apsp;
 
-public class JohnsonsAlgorithm {
+public class DistanceMatrixPrintPath {
 }

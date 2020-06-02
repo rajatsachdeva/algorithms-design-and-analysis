@@ -3,7 +3,9 @@ package com.rohan.dsa.foundations.sorting;
 import java.util.Arrays;
 
 /**
- * Idea is to compare 2 adjacent values in an array. if one found greater then swap it
+ * Idea:-
+ * <p>
+ * Compare 2 adjacent values in an array. if one found greater then swap it
  * until the largest value is at the end of the array.
  * <p>
  * Normally, number of passes = number of elements - 1

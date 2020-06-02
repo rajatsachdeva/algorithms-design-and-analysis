@@ -9,6 +9,7 @@ import java.util.Arrays;
  * - Initially, sorted would be empty and unsorted would be the complete size
  * - We will find min element from the unsorted array
  * - min element would be added to the sorted array (swap)
+ * - we just work on the unsorted sublist. sorted list is appended.
  * <p>
  * Here Number of passes = Number of elements - 1;
  *

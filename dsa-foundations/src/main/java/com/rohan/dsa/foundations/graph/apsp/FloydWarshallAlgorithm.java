@@ -67,7 +67,7 @@ public class FloydWarshallAlgorithm {
                 {INF, INF, 0, 2},
                 {1, INF, INF, 0}
         };
-        
+
         FloydWarshallAlgorithm shortestPath = new FloydWarshallAlgorithm();
 
         int[][] distance = shortestPath.allPairShortestPath(graph);

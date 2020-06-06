@@ -1,4 +1,4 @@
 package com.rohan.dsa.foundations.hashing;
 
-public class Test {
+public class HashTableWithDynamicResizing {
 }

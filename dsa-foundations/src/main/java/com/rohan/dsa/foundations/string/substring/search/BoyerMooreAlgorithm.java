@@ -1,4 +1,4 @@
-package com.rohan.dsa.foundations.string.matching;
+package com.rohan.dsa.foundations.string.substring.search;
 
 public class BoyerMooreAlgorithm {
 }
